@@ -1,13 +1,14 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-root',
-  standalone: true,
-  imports: [RouterOutlet],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrls: ['./app.component.css'],
+  standalone: true,
+  imports: [CommonModule, RouterModule] // importing the commonmodule to use standalone components and routermodules for routing 
 })
-export class AppComponent {
-  title = 'quiz-angular';
+export class AppComponent { // root component of the app, with the title
+  title = 'quiz-app';
 }

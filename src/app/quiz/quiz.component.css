@@ -1,0 +1,96 @@
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+}
+
+/* Container for the quiz */
+.quiz-container {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  margin: 0 auto; /* Center the container */
+}
+
+/* Title */
+.quiz-container h1 {
+  font-size: 2em;
+  margin-bottom: 20px;
+  text-align: center; /* Center the title */
+}
+
+/* Question text */
+.quiz-container h2 {
+  margin-bottom: 20px;
+  text-align: center; /* Center the current question number */
+}
+
+/* Question text */
+.question-container p {
+  text-align: center; /* Center the question text */
+}
+
+/* Options list */
+.options-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Ensure equal-width columns */
+  gap: 10px;
+  list-style-type: none;
+  padding: 0;
+  margin: 0; /* Remove default margin */
+}
+
+.options-grid li {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  display: flex;
+  align-items: center; /* Center content vertically */
+  justify-content: center; /* Center content horizontally */
+}
+
+.options-grid li.selected {
+  background-color: lightblue;
+  font-weight: bold;
+}
+
+/* The Buttons used to navigate */
+.navigation-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  position: relative;
+}
+
+.navigation-buttons button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.navigation-buttons button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.navigation-buttons button:hover:not(:disabled) {
+  background-color: #0056b3;
+}
+
+/* Center the Finish Quiz button */
+.finish-button {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
