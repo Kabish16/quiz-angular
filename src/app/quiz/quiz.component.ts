@@ -3,13 +3,18 @@ import { CommonModule } from '@angular/common';
 import { QuizService } from '../services/quiz.service';
 import { Question } from '../question.model';
 import { Router } from '@angular/router';
+import { ButtonModule } from 'primeng/button';
+import { RadioButtonModule } from 'primeng/radiobutton';
+import{CardModule} from 'primeng/card';
+
+
 
 @Component({
   selector: 'app-quiz',
   templateUrl: './quiz.component.html',
   styleUrls: ['./quiz.component.css'],
   standalone: true,
-  imports: [CommonModule] // importing the common module from the angular directory
+  imports: [CommonModule,ButtonModule,RadioButtonModule,CardModule] // importing the common module from the angular directory
 })
 export class QuizComponent implements OnInit { //Question array keep track of the questions and the current position
   questions: Question[] = [];

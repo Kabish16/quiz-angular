@@ -1,24 +1,28 @@
 <!-- In this HTML file it displays the quiz app-->
-<div class="quiz-container">
+<div class="quiz-container p-d-flex p-flex-column p-ai-center p-p-4">
   <h1>Quiz-Angular!</h1>
-  <div *ngIf="currentQuestion as question" class="question-container">
-    <h2>Question {{currentQuestionIndex + 1}}/{{questions.length}}</h2>
-    <p>{{question.text}}</p>
 
-    <ul class="options-grid">  <!-- In this class it displays the answer options and handles the selection-->
+  <div *ngIf="currentQuestion as question" class="question-container p-card p-shadow-4 p-p-4">
+    <h2>Question {{ currentQuestionIndex + 1 }}/{{ questions.length }}</h2>
+    <p>{{ question.text }}</p>
+
+    <ul class="options-grid">
+      <!-- Using normal HTML radio buttons for selecting the options -->
       <li *ngFor="let option of question.options"
-        [class.selected]="isSelected(option)"
-        (click)="selectAnswer(option)">
+          [class.selected]="isSelected(option)"
+          (click)="selectAnswer(option)">
         <input type="radio" name="answer" [checked]="isSelected(option)"> {{ option }}
       </li>
     </ul>
-<!--uses button to move back and forth in the quiz-->
-    <div class="navigation-buttons">
-      <button (click)="previousQuestion()" [disabled]="currentQuestionIndex === 0">Previous</button>
-      <button (click)="nextQuestion()" [disabled]="currentQuestionIndex === questions.length - 1">Next</button>
-      <button class="finish-button" (click)="goToResults()" [disabled]="currentQuestionIndex !== questions.length - 1">Finish Quiz</button>
+
+    <!-- Navigation buttons using PrimeNG's button styles -->
+    <div class="navigation-buttons p-d-flex p-jc-between p-mt-4">
+      <button pButton label="Previous" icon="pi pi-chevron-left" (click)="previousQuestion()" 
+              [disabled]="currentQuestionIndex === 0" class="p-button-secondary"></button>
+      <button pButton label="Finish Quiz" icon="pi pi-check" (click)="goToResults()" 
+              [disabled]="currentQuestionIndex !== questions.length - 1" class="p-button-success"></button>
+     <button pButton label="Next" icon="pi pi-chevron-right" iconPos="right" (click)="nextQuestion()" 
+              [disabled]="currentQuestionIndex === questions.length - 1" class="p-button-secondary"></button>         
     </div>
   </div>
 </div>
-
-

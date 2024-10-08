@@ -1,16 +1,16 @@
-<!-- This HTMl file is to display the results of the quiz -->>
-<div class="results-container">
+<!-- This HTMl file is to display the results of the quiz -->
+<div class="results-container p-p-3 border round ">
   <h2>Quiz Results</h2>
   <p>You got {{ correctAnswers }} out of {{ totalQuestions }} correct!</p>
 
-  <ul>
-    <li *ngFor="let answer of userAnswers; index as i">
+  <ul class="p-list">
+    <li *ngFor="let answer of userAnswers; index as i" class="p-mb-2 p-p-2 border border-round">
       Question {{ i + 1 }}: Your answer - {{ answer }} | Correct answer - {{ correctAnswerKeys[i] }}
     </li>
   </ul>
 
   <!-- Display the final score and number of correct answers -->
-  <button (click)="retakeQuiz()">Retake Quiz</button>
+  <p-button label="Retake Quiz" (click)="retakeQuiz()"></p-button>
 </div>
 
 <!-- Display the final score and number of correct answers -->

@@ -1,10 +1,11 @@
-<div *ngIf="question"> <!-- this is to displat the questions-->>
+<div *ngIf="question"> 
   <h2>Question {{questionIndex + 1}}/{{totalQuestions}}</h2>
   <p>{{question.text}}</p>
-  <ul>
-    <li *ngFor="let option of question.options">
+  <ul >
+    <li *ngFor="let option of question.options" class="p-mb-2">
       <input type="radio" name="answer" (click)="selectAnswer(option)">
-      {{option}} <!--have added a radio button to select the answer-->>
+      {{option}} 
     </li>
   </ul>
 </div>
+  

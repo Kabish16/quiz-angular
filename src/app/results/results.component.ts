@@ -2,13 +2,15 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { QuizService } from '../services/quiz.service';
 import { Router } from '@angular/router';
+import {ButtonModule} from 'primeng/button'
+
 
 @Component({
   selector: 'app-results',
   templateUrl: './results.component.html',
   styleUrls: ['./results.component.css'],
   standalone: true,
-  imports: [CommonModule]
+  imports: [CommonModule , ButtonModule]
 })
 export class ResultsComponent implements OnInit { // holds the quiz results in the variables 
   score = 0;
